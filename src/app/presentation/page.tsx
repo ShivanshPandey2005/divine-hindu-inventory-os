@@ -131,8 +131,44 @@ export default function AssignmentPresentation() {
       )
     },
     {
+      id: 'why-solution',
+      tabTitle: '4. Why This Solution',
+      slideTitle: 'Why This Solution: Core Value Propositions',
+      subtitle: 'Key strategic reasons for selecting this operational architecture.',
+      content: (
+        <div className="space-y-4">
+          <div className="grid grid-cols-2 gap-3 text-xs font-semibold">
+            <div className="rounded-xl border border-border-primary bg-bg-secondary/20 p-3.5 space-y-1">
+              <span className="text-[10px] text-saffron-500 uppercase font-bold block">1. Easy Adoption</span>
+              <p className="text-text-secondary leading-relaxed">
+                Simple, checklist-driven layout designed specifically for non-technical shop-floor employees.
+              </p>
+            </div>
+            <div className="rounded-xl border border-border-primary bg-bg-secondary/20 p-3.5 space-y-1">
+              <span className="text-[10px] text-saffron-500 uppercase font-bold block">2. Low Cost</span>
+              <p className="text-text-secondary leading-relaxed">
+                No expensive ERP licenses or hardware needed; built using lightweight web-standard frameworks.
+              </p>
+            </div>
+            <div className="rounded-xl border border-border-primary bg-bg-secondary/20 p-3.5 space-y-1">
+              <span className="text-[10px] text-saffron-500 uppercase font-bold block">3. Operational Visibility</span>
+              <p className="text-text-secondary leading-relaxed">
+                Real-time tracking of shelf stocks, customer checkouts, returns processing, and EOD reconciliations.
+              </p>
+            </div>
+            <div className="rounded-xl border border-border-primary bg-bg-secondary/20 p-3.5 space-y-1">
+              <span className="text-[10px] text-saffron-500 uppercase font-bold block">4. Scalable Architecture</span>
+              <p className="text-text-secondary leading-relaxed">
+                API-first database readiness ensures clean future migration to enterprise systems or automated IoT sensors.
+              </p>
+            </div>
+          </div>
+        </div>
+      )
+    },
+    {
       id: 'workflow',
-      tabTitle: '4. Inventory Workflow',
+      tabTitle: '5. Inventory Workflow',
       slideTitle: 'Operational Process Flow Diagrams',
       subtitle: 'The 9-stage inventory lifecycle mapping connecting suppliers to end reports.',
       content: (
@@ -163,27 +199,45 @@ export default function AssignmentPresentation() {
       )
     },
     {
-      id: 'formula',
-      tabTitle: '5. Inventory Formula',
-      slideTitle: 'Inventory Tracking Formula & Ledger Math',
-      subtitle: 'The calculation structures that govern the transaction balance log.',
+      id: 'calculation-logic',
+      tabTitle: '6. Calculation Logic',
+      slideTitle: 'Inventory Calculation Logic & Ledger Math',
+      subtitle: 'The mathematical equation that governs physical stock tracking.',
       content: (
-        <div className="space-y-4">
-          <div className="rounded-xl border border-saffron-500/10 bg-saffron-500/5 p-4 space-y-3">
-            <span className="text-[10px] text-saffron-500 uppercase font-bold block">Central Ledger Equation</span>
-            <div className="bg-bg-secondary p-3.5 rounded-lg border border-border-primary/60 font-mono text-xs text-text-primary text-center font-bold">
-              Closing Stock = Opening Stock + Inbound Cargo - Customer Sales - Written-off Waste
+        <div className="space-y-3">
+          <div className="rounded-xl border border-saffron-500/10 bg-saffron-500/5 p-3.5 space-y-3">
+            <div className="bg-bg-secondary p-2.5 rounded-lg border border-border-primary/60 font-mono text-[10.5px] text-text-primary text-center font-bold">
+              Closing Stock = Opening Stock + Inward Stock - Sales + Returns - Damaged Stock
             </div>
-            <p className="text-xs text-text-secondary leading-relaxed font-semibold">
-              This mathematical constraint guarantees that every single item transaction (Sale, Purchase, Return, Damage, Expiry, or Manual Adjustments) balances perfectly. Any deviation highlights physical shrinkage.
-            </p>
+            <div className="grid grid-cols-2 sm:grid-cols-3 gap-2 text-[10px] leading-snug">
+              <div className="p-2 rounded bg-bg-secondary/60 border border-border-primary/40">
+                <strong className="text-text-primary block mb-0.5">Opening Stock</strong>
+                <span className="text-text-secondary">Physical baseline count at shift start.</span>
+              </div>
+              <div className="p-2 rounded bg-bg-secondary/60 border border-border-primary/40">
+                <strong className="text-text-primary block mb-0.5">Inward Stock</strong>
+                <span className="text-text-secondary">Added quantity from supplier orders.</span>
+              </div>
+              <div className="p-2 rounded bg-bg-secondary/60 border border-border-primary/40">
+                <strong className="text-text-primary block mb-0.5">Sales</strong>
+                <span className="text-text-secondary">Decremented quantity logged at checkout.</span>
+              </div>
+              <div className="p-2 rounded bg-bg-secondary/60 border border-border-primary/40">
+                <strong className="text-text-primary block mb-0.5">Returns</strong>
+                <span className="text-text-secondary">Defect-free check-ins added back to shelf.</span>
+              </div>
+              <div className="p-2 rounded bg-bg-secondary/60 border border-border-primary/40">
+                <strong className="text-text-primary block mb-0.5">Damaged Stock</strong>
+                <span className="text-text-secondary">Quarantined write-offs (losses).</span>
+              </div>
+            </div>
           </div>
         </div>
       )
     },
     {
       id: 'reporting',
-      tabTitle: '6. Reports & Dashboards',
+      tabTitle: '7. Reports & Dashboards',
       slideTitle: 'Operational & Financial Reports Matrix',
       subtitle: 'Standard spreadsheet summaries designed to evaluate daily store margins.',
       content: (
@@ -210,7 +264,7 @@ export default function AssignmentPresentation() {
     },
     {
       id: 'alerts',
-      tabTitle: '7. Low Stock Alerts',
+      tabTitle: '8. Low Stock Alerts',
       slideTitle: 'Automated Threshold Warning System',
       subtitle: 'Safety alerts to ensure adequate stock levels during high-demand festival hours.',
       content: (
@@ -234,7 +288,7 @@ export default function AssignmentPresentation() {
     },
     {
       id: 'reconciliation',
-      tabTitle: '8. Stock Reconciliation',
+      tabTitle: '9. Stock Reconciliation',
       slideTitle: 'Reconciliation Workflow: Investigate, Approve, Adjust',
       subtitle: 'An auditing control loop designed for daily shop EOD closing.',
       content: (
@@ -261,7 +315,7 @@ export default function AssignmentPresentation() {
     },
     {
       id: 'roadmap',
-      tabTitle: '9. Setup Roadmap',
+      tabTitle: '10. Setup Roadmap',
       slideTitle: 'Implementation Rollout Presentation Plan',
       subtitle: 'A phased weekly timeline for digitizing Bangalore central shop floor operations.',
       content: (
@@ -284,9 +338,45 @@ export default function AssignmentPresentation() {
       )
     },
     {
+      id: 'tools-roadmap',
+      tabTitle: '11. Recommended Tools',
+      slideTitle: 'Recommended Tools & Enterprise Scaling Roadmap',
+      subtitle: 'A logical progression path for scaling store operations and database structures.',
+      content: (
+        <div className="space-y-4">
+          <div className="grid grid-cols-2 gap-3 text-xs font-semibold">
+            <div className="rounded-xl border border-border-primary bg-bg-secondary/20 p-3.5 space-y-1">
+              <span className="text-[10px] text-saffron-500 uppercase font-bold block">1. Google Sheets</span>
+              <p className="text-text-secondary leading-relaxed">
+                Initial baseline staging for quick manual database imports, seed data management, and backups.
+              </p>
+            </div>
+            <div className="rounded-xl border border-border-primary bg-bg-secondary/20 p-3.5 space-y-1">
+              <span className="text-[10px] text-saffron-500 uppercase font-bold block">2. Looker Studio</span>
+              <p className="text-text-secondary leading-relaxed">
+                Visual reporting connection directly feeding on transaction logs to track sales performance.
+              </p>
+            </div>
+            <div className="rounded-xl border border-border-primary bg-bg-secondary/20 p-3.5 space-y-1">
+              <span className="text-[10px] text-saffron-500 uppercase font-bold block">3. Zoho Inventory</span>
+              <p className="text-text-secondary leading-relaxed">
+                Dedicated inventory engine for multi-channel sales sync, barcode printing, and PO generation.
+              </p>
+            </div>
+            <div className="rounded-xl border border-border-primary bg-bg-secondary/20 p-3.5 space-y-1">
+              <span className="text-[10px] text-saffron-500 uppercase font-bold block">4. ERPNext</span>
+              <p className="text-text-secondary leading-relaxed">
+                Unified open-source enterprise ERP to manage finance journals, purchasing pipelines, and HR.
+              </p>
+            </div>
+          </div>
+        </div>
+      )
+    },
+    {
       id: 'impact',
-      tabTitle: '10. Business Impact',
-      slideTitle: 'Expected Business Outcomes & Value',
+      tabTitle: '12. Business Impact',
+      slideTitle: 'Business Impact: Expected Outcomes & Value',
       subtitle: 'The projected growth and waste-reduction margins for Bangalore central store Hub.',
       content: (
         <div className="space-y-4">
@@ -364,7 +454,7 @@ export default function AssignmentPresentation() {
     },
     {
       id: 'automation',
-      tabTitle: '11. Future AI Automation',
+      tabTitle: '13. Future AI Automation',
       slideTitle: 'Future AI Automation & Enterprise Scales',
       subtitle: 'Scaling inventory operations using automated models and sensor integrations.',
       content: (
