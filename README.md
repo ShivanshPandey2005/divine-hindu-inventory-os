@@ -1,5 +1,7 @@
 # ॐ Divine Hindu Bangalore Store - Enterprise Inventory Operating System (OS)
 
+### 🚀 Live Demo: [divine-hindu-inventory-os.vercel.app](https://divine-hindu-inventory-os.vercel.app/)
+
 A professional, high-fidelity Next.js 16 dashboard and store-level operating system tailored to support daily workflows for retail floor employees, checkouts, and manager auditing, while providing corporate executive reports for store owners.
 
 ---
