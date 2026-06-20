@@ -1,0 +1,148 @@
+@import "tailwindcss";
+
+@theme {
+  --color-saffron-50: var(--saffron-50);
+  --color-saffron-100: var(--saffron-100);
+  --color-saffron-200: var(--saffron-200);
+  --color-saffron-300: var(--saffron-300);
+  --color-saffron-400: var(--saffron-400);
+  --color-saffron-500: var(--saffron-500);
+  --color-saffron-600: var(--saffron-600);
+  --color-saffron-700: var(--saffron-700);
+  
+  --color-bg-primary: var(--bg-primary);
+  --color-bg-secondary: var(--bg-secondary);
+  --color-bg-tertiary: var(--bg-tertiary);
+  --color-border-primary: var(--border-primary);
+  --color-text-primary: var(--text-primary);
+  --color-text-secondary: var(--text-secondary);
+  
+  --shadow-saffron-sm: 0 1px 2px 0 rgba(255, 153, 51, 0.1);
+  --shadow-saffron: 0 4px 12px 0 rgba(255, 153, 51, 0.12);
+  --shadow-saffron-lg: 0 12px 24px -4px rgba(255, 153, 51, 0.18);
+}
+
+:root {
+  /* Saffron Palette */
+  --saffron-50: #FFF5EB;
+  --saffron-100: #FFE8D1;
+  --saffron-200: #FFD1A4;
+  --saffron-300: #FFB46E;
+  --saffron-400: #FF9933; /* Standard Saffron Accent */
+  --saffron-500: #E07B12;
+  --saffron-600: #BF6200;
+  --saffron-700: #994A00;
+
+  /* Theme - Light Mode */
+  --bg-primary: #FFFFFF;
+  --bg-secondary: #FAFAFB;
+  --bg-tertiary: #F1F2F4;
+  --border-primary: #E2E8F0;
+  --text-primary: #0F172A;
+  --text-secondary: #475569;
+}
+
+.dark {
+  /* Theme - Dark Mode */
+  --bg-primary: #0A0F1D;
+  --bg-secondary: #111827;
+  --bg-tertiary: #1E293B;
+  --border-primary: #334155;
+  --text-primary: #F8FAFC;
+  --text-secondary: #94A3B8;
+  
+  /* Overrides for Saffron elements in Dark Mode to remain high contrast */
+  --saffron-50: #2C1808;
+  --saffron-100: #4B270C;
+  --saffron-200: #783E10;
+  --saffron-300: #B25D15;
+  --saffron-400: #FF9933;
+  --saffron-500: #FFA84D;
+  --saffron-600: #FFB86C;
+  --saffron-700: #FFC88B;
+}
+
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  transition: background-color 0.2s ease, color 0.2s ease;
+  font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+}
+
+/* Recharts Custom Styling override */
+.recharts-default-tooltip {
+  background-color: var(--bg-primary) !important;
+  border-color: var(--border-primary) !important;
+  border-radius: 8px !important;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06) !important;
+}
+
+.recharts-tooltip-label {
+  color: var(--text-primary) !important;
+  font-weight: 600 !important;
+}
+
+.recharts-tooltip-item {
+  color: var(--text-secondary) !important;
+}
+
+/* Custom Scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-secondary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border-primary);
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--saffron-300);
+}
+
+/* Animations */
+@keyframes pulseGlow {
+  0%, 100% {
+    opacity: 0.15;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.35;
+    transform: scale(1.05);
+  }
+}
+
+.pulse-glow {
+  animation: pulseGlow 2s infinite ease-in-out;
+}
+
+@keyframes slideRight {
+  0% {
+    transform: translateX(-10px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.slide-right {
+  animation: slideRight 0.3s ease-out forwards;
+}
+
+/* Glassmorphism class */
+.glass {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(12px);
+}
+
+.dark .glass {
+  background: rgba(10, 15, 29, 0.7);
+  backdrop-filter: blur(12px);
+}
